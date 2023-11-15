@@ -1,36 +1,41 @@
 # №1
-N = int(98)
-def zero(N):
-    sum = 0
-    for i in range(len(str(N))):
-        sum = int(str(N)[i]) + sum
-    N = N - sum
-    return N
-count = 0
-while N != 0:
-    N = zero(N)
-    count += 1
-print(count)
+n = 98
+
+def summ(n):
+    return sum(int(digit) for digit in str(n))
+
+def find_steps_to_zero(n):
+
+    steps = 0
+    while n != 0:
+        n -= summ(n)
+        steps += 1
+    return steps
+
+print(find_steps_to_zero(n))
 
 
 # №2
 lst1 = [20, 30, 40]
 lst2 = [35, 85, 125]
 lst3 = [18, 47, 33]
-def multpl(a):
-    count = 1
-    for i in range(len(a)):
-        count = count * int(str(a[i]))
-    return count
-def ar_m(a):
-    count = 0
-    for i in range(len(a)):
-        count = count + int(str(a[i]))
-    return count // len(a)
-print(multpl(lst1))
-print(multpl(lst2))
-print(multpl(lst3))
-print(ar_m(lst1))
-print(ar_m(lst2))
-print(ar_m(lst3))
+multpl1 = 1
+for i in lst1:
+    multpl1 *= i
+multpl2 = 1
+for i in lst2:
+    multpl2 *= i
+multpl3 = 1
+for i in lst3:
+    multpl3 *= i
+ar_m1 = sum(lst1) / len(lst1)
+ar_m2 = sum(lst2) / len(lst2)
+ar_m3 = sum(lst3) / len(lst3)
+
+print("Произведение элементов первого массива:", multpl1)
+print("Среднее арифметическое значение первого массива:", ar_m1)
+print("Произведение элементов второго массива:", multpl2)
+print("Среднее арифметическое значение второго массива:", ar_m2)
+print("Произведение элементов третьего массива:", multpl3)
+print("Среднее арифметическое значение третьего массива:", ar_m3)
 
