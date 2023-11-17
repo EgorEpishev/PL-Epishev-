@@ -2,11 +2,11 @@
 from random import randint
 N = randint(210, 231) 
 count = 0
-def abc(a, b, c):
-    if a != b and b != c and a!=c:
+def num(one, ten, hun):
+    if one != ten and ten != hun and one != hun:
         return True
 for i in range(100, N + 1):
-    if abc(i // 100, (i // 10)%10, i%10):
+    if num(i // 100, (i // 10)%10, i%10):
         count += 1
         print(i)
 print(count)
