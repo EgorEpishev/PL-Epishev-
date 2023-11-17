@@ -35,7 +35,6 @@ for i in range(n):
         m = A[j][i]
         if i < j:
             A[i][j] = m
-        if j > i:
             A[j][i] = p
 
 for i in range(n):
